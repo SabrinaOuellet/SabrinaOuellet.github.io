@@ -1,80 +1,86 @@
-<!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sabrina Ouellet — Études internationales &amp; sécurité internationale</title>
-<meta name="description" content="Sabrina Ouellet, étudiante à la maîtrise professionnelle en études internationales (spécialité sécurité internationale) à l'Université Laval, Québec.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-          display: ['Fraunces', 'Georgia', 'serif']
-        },
-        colors: {
-          ink: { DEFAULT: '#15151f', soft: '#3d3d4c', mute: '#6e6e80' },
-          brand: {
-            50: '#f3f1ff', 100: '#e8e4ff', 200: '#d2caff', 300: '#b0a1ff',
-            400: '#8d78fe', 500: '#7058f7', 600: '#5b3eea', 700: '#4b2fd0',
-            800: '#3e28a9', 900: '#352586'
+  <!DOCTYPE html>
+  <html lang="fr" class="scroll-smooth">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabrina Ouellet — Études internationales &amp; sécurité internationale</title>
+  <meta name="description" content="Sabrina Ouellet, étudiante à la maîtrise professionnelle en études internationales (spécialité sécurité internationale) à l'Université Laval, Québec.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            display: ['Fraunces', 'Georgia', 'serif']
+          },
+          colors: {
+            ink: { DEFAULT: '#15151f', soft: '#3d3d4c', mute: '#6e6e80' },
+            brand: {
+              50: '#f3f1ff', 100: '#e8e4ff', 200: '#d2caff', 300: '#b0a1ff',
+              400: '#8d78fe', 500: '#7058f7', 600: '#5b3eea', 700: '#4b2fd0',
+              800: '#3e28a9', 900: '#352586'
+            }
+          },
+          boxShadow: {
+            soft: '0 18px 50px -18px rgba(21,21,31,.22)',
+            lift: '0 28px 70px -24px rgba(91,62,234,.32)'
           }
-        },
-        boxShadow: {
-          soft: '0 18px 50px -18px rgba(21,21,31,.22)',
-          lift: '0 28px 70px -24px rgba(91,62,234,.32)'
         }
       }
     }
-  }
-</script>
-<style>
-  html { scroll-padding-top: 90px; }
-  body { -webkit-font-smoothing: antialiased; }
-  ::selection { background: #d2caff; color: #15151f; }
-
-  /* Révélation au défilement */
-  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .75s cubic-bezier(.2,.7,.2,1), transform .75s cubic-bezier(.2,.7,.2,1); }
-  .reveal.is-in { opacity: 1; transform: none; }
-  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
-
-  /* Dégradé d'en-tête (visible tant qu'aucune photo n'est ajoutée) */
-  .hero-art {
-    background:
-      radial-gradient(900px 420px at 12% 8%, #7058f7 0%, rgba(112,88,247,0) 62%),
-      radial-gradient(760px 400px at 88% 20%, #14b8a6 0%, rgba(20,184,166,0) 60%),
-      radial-gradient(680px 380px at 62% 108%, #fb7185 0%, rgba(251,113,133,0) 58%),
-      linear-gradient(120deg, #f5f3ff 0%, #ecfeff 52%, #fff7ed 100%);
-  }
-  .avatar-fallback {
-    background: linear-gradient(135deg, #7058f7 0%, #14b8a6 60%, #fbbf24 115%);
-  }
-  .dot-grid {
-    background-image: radial-gradient(rgba(21,21,31,.10) 1px, transparent 1px);
-    background-size: 18px 18px;
-  }
-  /* Bloc à remplir */
-  .fill-slot { border: 2px dashed rgba(21,21,31,.16); transition: background-color .25s ease, border-color .25s ease; }
-  .fill-slot:hover { background-color: rgba(112,88,247,.05); border-color: rgba(112,88,247,.32); }
-  .slot-amber { border-color: rgba(245,158,11,.45); background-color: rgba(245,158,11,.07); }
-  .slot-amber:hover { border-color: rgba(245,158,11,.75); background-color: rgba(245,158,11,.12); }
-  .slot-rose  { border-color: rgba(251,113,133,.45); background-color: rgba(251,113,133,.06); }
-  .slot-rose:hover  { border-color: rgba(251,113,133,.75); background-color: rgba(251,113,133,.11); }
-  /* Chronologie */
-  .timeline::before {
-    content: ""; position: absolute; left: 13px; top: 6px; bottom: 6px; width: 2px;
-    background: linear-gradient(180deg, #7058f7, #14b8a6 55%, #fbbf24);
-    border-radius: 999px;
-  }
-  @media (min-width: 768px) { .timeline::before { left: 15px; } }
-</style>
-</head>
-<body class="bg-white font-sans text-ink">
+  </script>
+  <style>
+    html { scroll-padding-top: 90px; }
+    body { -webkit-font-smoothing: antialiased; }
+    ::selection { background: #d2caff; color: #15151f; }
+  
+    /* Révélation au défilement */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .75s cubic-bezier(.2,.7,.2,1), transform .75s cubic-bezier(.2,.7,.2,1); }
+    .reveal.is-in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  
+    /* Dégradé d'en-tête (visible tant qu'aucune photo n'est ajoutée) */
+    .hero-art {
+      background:
+        radial-gradient(900px 420px at 12% 8%, #7058f7 0%, rgba(112,88,247,0) 62%),
+        radial-gradient(760px 400px at 88% 20%, #14b8a6 0%, rgba(20,184,166,0) 60%),
+        radial-gradient(680px 380px at 62% 108%, #fb7185 0%, rgba(251,113,133,0) 58%),
+        linear-gradient(120deg, #f5f3ff 0%, #ecfeff 52%, #fff7ed 100%);
+    }
+    .avatar-fallback {
+      background: linear-gradient(135deg, #7058f7 0%, #14b8a6 60%, #fbbf24 115%);
+    }
+    .dot-grid {
+      background-image: radial-gradient(rgba(21,21,31,.10) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+    /* Bloc à remplir — contour pointillé coloré */
+    .fill-slot { border: 2px dashed rgba(112,88,247,.42); background-color: rgba(112,88,247,.05); transition: background-color .25s ease, border-color .25s ease; }
+    .fill-slot:hover { background-color: rgba(112,88,247,.10); border-color: rgba(112,88,247,.70); }
+    /* Variantes de couleur — cases du Parcours */
+    .slot-teal  { border-color: rgba(20,184,166,.45); background-color: rgba(20,184,166,.06); }
+    .slot-teal:hover  { border-color: rgba(20,184,166,.75); background-color: rgba(20,184,166,.11); }
+    .slot-amber { border-color: rgba(245,158,11,.45); background-color: rgba(245,158,11,.07); }
+    .slot-amber:hover { border-color: rgba(245,158,11,.75); background-color: rgba(245,158,11,.12); }
+    .slot-rose  { border-color: rgba(251,113,133,.45); background-color: rgba(251,113,133,.06); }
+    .slot-rose:hover  { border-color: rgba(251,113,133,.75); background-color: rgba(251,113,133,.11); }
+    /* Piste de langue / compétence */
+    .bar-track { background: rgba(21,21,31,.08); }
+    .bar-fill { width: 0; transition: width 1.4s cubic-bezier(.2,.7,.2,1); }
+    /* Chronologie */
+    .timeline::before {
+      content: ""; position: absolute; left: 13px; top: 6px; bottom: 6px; width: 2px;
+      background: linear-gradient(180deg, #7058f7, #14b8a6 55%, #fbbf24);
+      border-radius: 999px;
+    }
+    @media (min-width: 768px) { .timeline::before { left: 15px; } }
+  </style>
+  </head>
+  <body class="bg-white font-sans text-ink">
 
 <!-- ══════════════ NAVIGATION ══════════════ -->
 <header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
@@ -293,6 +299,42 @@
             <p class="mt-2 text-[0.88rem] italic text-ink/30">[Description en une ou deux phrases.]</p>
           </div>
         </article>
+      </div>
+
+<!-- ══ LANGUES + MES COMPÉTENCES ══ -->
+<div class="reveal mt-14 grid gap-10 rounded-3xl border border-ink/10 bg-white p-7 shadow-soft sm:p-9 lg:grid-cols-2">
+
+      <!-- Langues -->
+      <div>
+        <h3 class="font-display text-xl font-medium">Langues</h3>
+        <div class="mt-6 space-y-5" data-bars>
+          <div>
+            <div class="mb-2 flex items-baseline justify-between text-[0.92rem]">
+              <span class="font-semibold">Français</span><span class="text-ink-mute">Langue de travail</span>
+            </div>
+            <div class="h-2 w-full overflow-hidden rounded-full bar-track"><div class="bar-fill h-full rounded-full bg-brand-500" style="--w:100%"></div></div>
+          </div>
+          <div>
+            <div class="mb-2 flex items-baseline justify-between text-[0.92rem]">
+              <span class="font-semibold">Anglais</span><span class="text-ink-mute">Avancé</span>
+            </div>
+            <div class="h-2 w-full overflow-hidden rounded-full bar-track"><div class="bar-fill h-full rounded-full bg-teal-500" style="--w:85%"></div></div>
+          </div>
+          <div>
+            <div class="mb-2 flex items-baseline justify-between text-[0.92rem]">
+              <span class="font-semibold">Espagnol</span><span class="text-ink-mute">Connaissances de base</span>
+            </div>
+            <div class="h-2 w-full overflow-hidden rounded-full bar-track"><div class="bar-fill h-full rounded-full bg-amber-400" style="--w:30%"></div></div>
+          </div>
+          <div>
+            <div class="mb-2 flex items-baseline justify-between text-[0.92rem]">
+              <span class="font-semibold">Mandarin</span><span class="text-ink-mute">Connaissances de base</span>
+            </div>
+            <div class="h-2 w-full overflow-hidden rounded-full bar-track"><div class="bar-fill h-full rounded-full bg-rose-400" style="--w:30%"></div></div>
+          </div>
+          <!-- À PERSONNALISER : --w va de 0% à 100% ; couleur : bg-brand-500, bg-teal-500,
+                   bg-amber-400, bg-rose-400, bg-sky-500, bg-violet-500… -->
+        </div>
       </div>
 
       <!-- Savoir-être -->
